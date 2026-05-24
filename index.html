@@ -1,2 +1,136 @@
-# Login-Site-do-Junin123vip1
-Estou aprendendo a programar e fiz um site de login 123vip1
+<!DOCTYPE html>
+<html>
+<body style="
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+">
+
+<div id="login" style="text-align: center;">
+
+<h1>Login</h1>
+
+<input id="usuario" type="text" style="width: 300px;
+height: 40px;"placeholder=Usuário>
+<br><br>
+<input id="senha"
+type="password"
+inputmode="numeric"style="width: 300px;
+height: 30px;" placeholder="Senha">
+<br><br>
+
+
+    <button onclick="entrar()">
+      Entrar
+    </button>
+    
+    <button onclick="irRegistrar()">
+      Registrar
+    </button>
+
+</div>
+
+<!-- REGISTRO -->
+
+<div id="registro"
+  style="display:none; text-align: center;">
+  
+  <button onclick="voltarLogin()"
+style="
+position: absolute;
+top: 20px;
+left: 20px;
+">
+⬅ Voltar
+</button>
+  
+  <h1>Registrar</h1>
+  <p id="mensagem"></p>
+  
+  <input id="novoUsuario"
+  type="text"
+  placeholder="Novo Usuario">
+  
+  <br><br>
+  
+  <input id="novaSenha"
+  type="password"
+  inputmode="numeric"
+  placeholder="Nova senha">
+  
+  <br><br>
+  
+  <button onclick="registrar()">
+    Registrar
+  </button>
+  
+</div>
+
+<script>
+  
+ if ("" == "" &&
+     "" == "")
+  
+  function irRegistrar() {
+    
+    document.getElementById("login").style.display = "none";
+    document.getElementById("registro").style.display = "block";
+    
+  }
+  
+  function  voltarLogin() {
+    
+    document.getElementById("registro").style.display = "none";
+    document.getElementById("login").style.display = "block";
+  }
+  
+  function registrar() {
+    
+    usuarioSalvo = 
+    document.getElementById("novoUsuario").value;
+    
+    senhaSalva = 
+    document.getElementById("novaSenha").value;
+    
+    if (usuarioSalvo == "" ||
+    senhaSalva == "") {
+      
+    alert("Preencha todos os campos!");
+    return;
+    
+    }
+    
+    document.getElementById("mensagem").innerHTML =
+    "Registrado com sucesso!";
+    
+    setTimeout(voltarLogin, 2000);
+    
+  }
+  
+  function entrar() {
+  
+  let usuario =
+  document.getElementById("usuario").value;
+  
+  let senha = 
+  document.getElementById("senha").value
+  
+  if (usuario == usuarioSalvo &&
+  senha == senhaSalva) {
+    
+    alert("Login realizado!");
+    
+  }
+  
+  else {
+    
+    alert("Usuario ou senha incorretos!");
+  }
+  
+  }
+  
+</script>
+
+</body>
+</html>
